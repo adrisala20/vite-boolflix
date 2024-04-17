@@ -1,20 +1,39 @@
 <template>
   <HeaderComponent />
-  <MainComponent />
-  <FooterComponent />
-   
+  <MainComponent />   
 </template>
 
 <script>
+  import {store} from './store.js';
+  import axios from 'axios';
   import HeaderComponent from './components/HeaderComponent.vue';
   import MainComponent from './components/MainComponent.vue';
-  import FooterComponent from './components/FooterComponent.vue';
   export default {
     name:'App',
     components:{
       HeaderComponent,
-      MainComponent,
-      FooterComponent
+      MainComponent
+    },
+    data(){
+      return{
+        store
+      }
+    },
+    methods:{
+      getMovies(){
+        axios.get(this.store.apiUrl+this.store.endPoint.movie, this.store.options).then((res)=>{
+          console.log(res.data.results)
+        })
+      },
+      getSeries(){
+        axios.get(this.store.apiUrl+this.store.endPoint.tv, this.store.options).then((res)=>{
+          console.log(res.data.results)
+        })
+      }
+    },
+    created(){
+      this.getMovies();
+      this.getSeries();
     }
     
   }
