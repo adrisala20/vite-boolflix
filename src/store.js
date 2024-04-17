@@ -4,14 +4,16 @@ export const store = reactive({
     apiUrl:'https://api.themoviedb.org/3/',
     endPoint:{
         movie:'search/movie',
-        tv:'search/tv'
+        serieTv:'search/tv'
     },
     options:{
         params:{
-            api_key:'1ec97a9cf8b76f59707959814f5ed3af', 
+            api_key:'e36ef098b0c58eb84f84e642cd8239a0', 
             query:'a',
         }
     },
-    imageUrl:'https://image.tmdb.org/t/p/original/'
-    
+    imageUrl:'https://image.tmdb.org/t/p/original/',
+    movies:[],
+    seriesTv:[],
+    searchResults:'',
 })
