@@ -1,24 +1,13 @@
 <template>
-
     <div class="card">
-        <div class="flip_card">
-            <div class="card-front">
-                <img src="" class="card-img" alt="#">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title">{{ item.title || item.name }}</h4>
+            <h6 class="card-title">{{item.original_title || item.original_name}}</h6>
+            <div>
+                {{ item.original_language }}
             </div>
-    
-            <div class=" card-back card-body">
-             <h4 class="card-title"></h4>
-             <h6 class="card-title"></h6>
-             <div class="card-text">
-                <div class="flag">
-                    <img src="" alt="#">
-                </div> 
-                <div class="star">
-                </div>
-            </div>
-
-            </div>
-             
+             <div >{{item.vote_average}}</div>
          </div>
     </div>
 </template>
@@ -27,7 +16,7 @@
     export default {
         name:'CardComponent',
         props:{
-            
+            item: Object
         },
         data(){
             return{

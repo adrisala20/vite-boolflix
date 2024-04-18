@@ -1,8 +1,8 @@
 <template>
     <main>
         <div class="container">
-            <CardList title="movie" />
-            <CardList title="serietv"/>  
+            <CardList title="Movies" :list="store.movies"/>
+            <CardList title="Serie Tv" :list="store.seriesTv"/>  
         </div>
     </main>
 </template>

@@ -10,7 +10,8 @@
                 v-model.trim="store.options.params.query">
                 <button class="btn btn-outline-danger" type="button" id="buttonSearch"
                 @click="searchMedia">
-                Cerca</button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
         </div>
     </header>
