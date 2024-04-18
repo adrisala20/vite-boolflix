@@ -7,7 +7,9 @@
             <div>
                 {{ item.original_language }}
             </div>
-             <div >{{item.vote_average}}</div>
+             <div class="star">
+                <i :class="{'fa-solid': n <= starVote, 'fa-regular': n > starVote }" class=" fa-star" v-for="n in 5"></i>
+                </div>
          </div>
     </div>
 </template>
@@ -24,9 +26,17 @@
              
             }
         },
+        computed:{
+            starVote(){
+                return Math.floor(this.item.vote_average / 2)
+            }
+        }
     }
 </script>
 
-<style lang="scss" scoped>
 
+<style lang="scss" scoped>
+.star{
+    color: gold;
+}
 </style>
