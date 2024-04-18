@@ -5,9 +5,11 @@
                 <h1>Boolflix</h1>
             </div>
             <div class="input-group mb-3 right">
-                <input type="text" class="form-control" placeholder="Cerca" @keyup.enter="$emit('searchResults')" v-model="store.options.params.query">
+                <input type="text" class="form-control" placeholder="Cerca" 
+                @keyup.enter="searchMedia" 
+                v-model.trim="store.options.params.query">
                 <button class="btn btn-outline-danger" type="button" id="buttonSearch"
-                @click="$emit('searchResults')">
+                @click="searchMedia">
                 Cerca</button>
             </div>
         </div>
@@ -21,6 +23,11 @@
         data(){
             return{
                 store
+            }
+        },
+        methods:{
+            searchMedia(){
+                this.$emit('searchResults')
             }
         }
     }
@@ -38,7 +45,7 @@ header{
     }
 };
 .right{
-    width: 500px;
+    width: 300px;
     button{
         color:white;
         background-color: red;

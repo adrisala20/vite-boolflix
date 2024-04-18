@@ -1,25 +1,40 @@
 <template>
 
     <div class="card">
-        <div class="card-flip">
+        <div class="flip_card">
             <div class="card-front">
-                <!-- <img :src="image" class="card-img" alt="..."> -->
+                <img src="" class="card-img" alt="#">
             </div>
     
             <div class=" card-back card-body">
-             <h5 class="card-title">{{ title }}</h5>
-             <h5 class="card-text">{{ name }}</h5>
-             <p class="card-text">{{vote}}</p>
-             <p class="card-text">{{language}}</p>
+             <h4 class="card-title"></h4>
+             <h6 class="card-title"></h6>
+             <div class="card-text">
+                <div class="flag">
+                    <img src="" alt="#">
+                </div> 
+                <div class="star">
+                </div>
+            </div>
+
             </div>
              
          </div>
     </div>
 </template>
 <script>
+    import {store} from '../store.js';
     export default {
         name:'CardComponent',
-        props:['imageUrl', 'language','title','name','vote']
+        props:{
+            
+        },
+        data(){
+            return{
+                store,
+             
+            }
+        },
     }
 </script>
 
