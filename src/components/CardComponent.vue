@@ -29,7 +29,7 @@
             return{
                 store,
                 flags:['en','fr','it','es','cn','ko','unknown'],
-                images: [this.item.poster_path,'logo']
+                images: 'logo',
             }
         },
         computed:{
@@ -47,7 +47,7 @@
                 if(this.item.poster_path){
                     return store.imageUrl + this.item.poster_path;
                 } else{
-                    return '/img/'+store.imageUrl+'logo.jpg';
+                    return '/img/logo.jpg';
                 }
             }
 
@@ -80,6 +80,12 @@
     };
     &:hover .flip-card-inner{
         transform: rotateY(180deg);
+    }
+    .flip-card-front{
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .flip-card-front,
     .flip-card-back{

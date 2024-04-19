@@ -29,7 +29,7 @@ main{
     height: calc(100vh - 90px);
     padding-top: 90px;
     .mycontainer{
-        padding: 0 80px;
+        padding: 0 70px;
     }
 }
 

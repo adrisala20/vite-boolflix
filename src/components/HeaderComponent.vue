@@ -44,18 +44,19 @@ header{
     top: 0;
     z-index: 4000;
     .mycontainer{
-        padding: 0 60px;
+        padding: 0 50px;
+        min-width: 400px;
     }
 }
 .left{
-    width: 40%;
+    width: 5rem;
     h1{
         color: red;
         font-weight: bolder;
     }
 };
 .right{
-    width: 300px;
+    width: 10rem;
     button{
         color:white;
         background-color: red;
