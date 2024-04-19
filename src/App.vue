@@ -22,30 +22,25 @@
     methods:{
       getMedia(){
         if(this.store.options.params.query){ //faccio il controllo per evitare di fare ricerca di input vuoti
-          this.getMovies();
-          this.getSeries()
+          this.store.error.message= '';
+          this.store.loading=true;
+          Promise.all([this.getMovies(),this.getSeries()]).then((res)=>{
+          this.store.movies = res[0].data.results;
+          this.store.seriesTv = res[1].data.results;
+          console.log(res.data.results)
+        }).catch((error)=>{
+          this.store.error.message = error.message
+        }).finally(()=>{
+          this.store.loading= false;
+        })
         }
       
       },
       getMovies(){
-        axios.get(this.store.apiUrl+this.store.endPoint.movie, this.store.options).then((res)=>{
-          this.store.movies = res.data.results;
-          console.log(res.data.results)
-        }).catch((error)=>{
-          console.log(error);
-        }).finally(()=>{
-          console.log('finally')
-        })
+       return axios.get(this.store.apiUrl+this.store.endPoint.movie, this.store.options);
       },
       getSeries(){
-        axios.get(this.store.apiUrl+this.store.endPoint.serieTv, this.store.options).then((res)=>{
-          this.store.seriesTv = res.data.results;
-          console.log(res.data.results)
-        }).catch((error)=>{
-          console.log(error);
-        }).finally(()=>{
-          console.log('finally')
-        })
+        return axios.get(this.store.apiUrl+this.store.endPoint.serieTv, this.store.options);
       }
     },
     created(){

@@ -103,6 +103,7 @@
         overflow-x: hidden;
         scroll-behavior: smooth;
         scrollbar-color: rgb(68, 68, 68);
+        
 }
 }
 

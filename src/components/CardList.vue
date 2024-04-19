@@ -35,6 +35,10 @@
 .mycontainer{
     padding: 80px;
     min-width: 400px;
+    h2{
+        padding-bottom: 20px;
+        color: white;
+    }
 }
 
 </style>
