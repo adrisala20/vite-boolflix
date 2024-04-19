@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container">
+        <div class="mycontainer">
             <CardList title="Movies" :list="store.movies"/>
             <CardList title="Serie Tv" :list="store.seriesTv"/>  
         </div>
@@ -26,7 +26,11 @@ import CardList from './CardList.vue';
 
 <style lang="scss" scoped>
 main{
-    padding-top: 90px 0;
+    height: calc(100vh - 90px);
+    padding-top: 90px;
+    .mycontainer{
+        padding: 0 80px;
+    }
 }
 
 </style>

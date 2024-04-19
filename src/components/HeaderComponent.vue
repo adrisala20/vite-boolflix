@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="container d-flex justify-content-between py-4">
+        <div class="mycontainer d-flex justify-content-between py-4">
             <div class="left">
                 <h1>Boolflix</h1>
             </div>
@@ -37,6 +37,15 @@
 <style lang="scss" scoped>
 header{
     background-color: black;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4000;
+    .mycontainer{
+        padding: 0 60px;
+    }
 }
 .left{
     width: 40%;
