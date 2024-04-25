@@ -1,8 +1,8 @@
 <template>
     <header>
-        <div class="mycontainer d-flex justify-content-between py-4">
+        <div class="mycontainer  d-flex justify-content-between align-items-center ">
             <div class="left">
-                <h1>Boolflix</h1>
+                <img src="/img/netflix-logo.png" alt="logo netflix">
             </div>
             <div class="input-group mb-3 right">
                 <input type="text" class="form-control" placeholder="Cerca" 
@@ -44,23 +44,33 @@ header{
     top: 0;
     z-index: 4000;
     .mycontainer{
-        padding: 0 50px;
+        padding: 0 40px;
         min-width: 400px;
-    }
-}
-.left{
+    };
+    .left{
     width: 5rem;
-    h1{
-        color: red;
-        font-weight: bolder;
+    height: 90px;
+    position: relative;
+    img{
+        margin: 0;
+        height: 80px;
+        width:150px ;    
     }
-};
-.right{
+    };
+    .right{
     width: 10rem;
+    input,
+    button{
+        display: flex;
+        align-items: center;
+        height: 2rem;
+    }
     button{
         color:white;
         background-color: red;
     }
 }
+}
+
 
 </style>

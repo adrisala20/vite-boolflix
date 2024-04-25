@@ -9,7 +9,7 @@ export const store = reactive({
     options:{
         params:{
             api_key:'e36ef098b0c58eb84f84e642cd8239a0', 
-            query:'a',
+            query:'',
         }
     },
     imageUrl:'https://image.tmdb.org/t/p/original/',
@@ -18,5 +18,6 @@ export const store = reactive({
     loading: false,
     error:{
         message:null
-    }
+    },
+    // topMovies:[],
 })

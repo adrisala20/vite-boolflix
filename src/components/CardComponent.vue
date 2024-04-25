@@ -4,16 +4,16 @@
             <div class=" card flip-card-front">
                 <img :src="getImage" class="card-img-top" :alt="item.original_title || item.original_name">
             </div>
-            <div class="card-body flip-card-back">
+            <div class="card-body flip-card-back myscroollbar">
                <h4 class="card-title pb-2 ">{{ item.title || item.name }}</h4>
                <h6 class="card-title">{{item.original_title || item.original_name}}</h6>
-               <p class="card-text">{{ item.overview }}</p>
-               <div class="flag">
+               <div class="flag py-1 ">
                    <img :src="myFlags" :alt="item.original_language  + ' flag'">
                </div>
                 <div class="star">
                    <i :class="{'fa-solid': n <= starVote, 'fa-regular': n > starVote }" class=" fa-star" v-for="n in 5"></i>
                 </div>
+                <p class="card-text">{{ item.overview }}</p>
             </div>     
         </div>
     </div>
@@ -60,6 +60,8 @@
 .flag{
     img{
         height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 }
 .star{
@@ -101,11 +103,8 @@
         transform: rotateY(180deg);
         overflow-y: auto;
         overflow-x: hidden;
-        scroll-behavior: smooth;
-        scrollbar-color: rgb(68, 68, 68);
-        
+        scrollbar-width:thin;
+        scrollbar-color: #777 #555 ;      
+        }  
 }
-}
-
-
 </style>
