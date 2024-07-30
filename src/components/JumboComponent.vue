@@ -15,10 +15,8 @@
 .jumbo{
     display: flex;
     justify-content: center;
-    height: 300px
-    video{
-       
-}
+    aspect-ratio: 16 / 9;
+
 }
 
 </style>
